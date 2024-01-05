@@ -25,7 +25,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           icon: const Icon(Icons.arrow_back_ios), // Button Icon
         ),
       ),
-      body: SingleChildScrollView(
+      body: SingleChildScrollView( // Allows the scroll view to work
         child: Column( // Body of the screen
           children: [ // Just like child but children allows more widgets
             Image.asset('images/einstein.jpg'), // Image populating and the path
@@ -92,22 +92,22 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
                 ],
               ),
             ),
-            Switch(
-              value: isSwitch,
-              onChanged: (bool newBool){
-                setState(() {
-                  isSwitch = newBool;
+            Switch( // This is a toggle on or off switch
+              value: isSwitch, // Calles the bool above for value
+              onChanged: (bool newBool){ // This allows the value to change
+                setState(() { // Allows the widget to refresh
+                  isSwitch = newBool; // Changes the value
                 });
               }
             ),
-            Checkbox(
-              value: isCheckbox, 
-              onChanged: (bool? newBool){
-              setState(() {
-                isCheckbox = newBool;
+            Checkbox( // This is a toggle the widget to be checked or not
+              value: isCheckbox, // Calles the bool above for value
+              onChanged: (bool? newBool){ // This allows the value to change
+              setState(() { // Allows the widget to refresh
+                isCheckbox = newBool; // Changes the value
               });
             }),
-            Image.network('https://cdn.pixabay.com/photo/2023/09/30/17/30/ai-generated-8286112_1280.jpg')
+            Image.network('https://cdn.pixabay.com/photo/2023/09/30/17/30/ai-generated-8286112_1280.jpg') // Inserts a imag via web address
           ],
         ),
       ),
