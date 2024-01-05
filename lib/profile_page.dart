@@ -10,10 +10,10 @@ class ProfilePage extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) { // Builds the list
         return ListTile( // Returns list.....
           title: Text('Item ${(index + 1)}'), // Items text and increases by 1!
-          leading: const Icon(Icons.person),
-          trailing: const Icon(Icons.select_all),
-          onTap: () {
-            debugPrint('Item ${(index + 1)} selected');
+          leading: const Icon(Icons.person), // Adds person icon in front of the item
+          trailing: const Icon(Icons.select_all), // Adds the icon behind the item
+          onTap: () { // When clicked...
+            debugPrint('Item ${(index + 1)} selected'); // Do this!
           },
         );
       },
