@@ -16,20 +16,16 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
         title: const Text('Learn Flutter!'), // Title
         automaticallyImplyLeading:
             false, // Gets ride of the default back button
-        leading: IconButton(
-          // Creats icon button
-          onPressed: () {
-            // Basically a onClickListener
+        leading: IconButton( // Creats icon button 
+          onPressed: () { // Basically a onClickListener
             Navigator.of(context)
                 .pop(); // Deletes the page the user was on (AKA back button)
           },
           icon: const Icon(Icons.arrow_back_ios), // Button Icon
         ),
       ),
-      body: Column(
-        // Body of the screen
-        children: [
-          // Just like child but children allows more widgets
+      body: Column( // Body of the screen
+        children: [ // Just like child but children allows more widgets
           Image.asset('images/einstein.jpg'), // Image populating and the path
           const SizedBox(
             height: 10,
@@ -68,6 +64,28 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
             debugPrint('Text Button'); // do this!
             }, 
             child: const Text('Text Button'), // Text widget
+          ),
+          GestureDetector( // Creats a gesture widget allowing customizing with gestures
+          behavior: HitTestBehavior.opaque, // This allows a gesture anywhere on the row
+            onTap: (){ // The selected gesture
+              debugPrint('This is the row :)', // Print to the console window
+              );
+            },
+            child: const Row( // Row widget
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Spaces and centers the rows children
+              children: [
+                // Icons for Row widget
+                Icon(
+                  Icons.local_fire_department, // Icon selected
+                  color: Colors.blue, // Color of icon
+                ),
+                Text('Row Widget'),
+                Icon(
+                  Icons.local_fire_department, // Icon selected
+                  color: Colors.blue, // Color of icon
+                ),
+              ],
+            ),
           ),
         ],
       ),
