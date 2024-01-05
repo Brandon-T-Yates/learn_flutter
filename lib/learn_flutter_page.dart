@@ -8,11 +8,11 @@ class LearnFlutterPage extends StatefulWidget {
 }
 
 class _LearnFlutterPageState extends State<LearnFlutterPage> {
+  bool isSwitch = false; // Bool for the switch widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Nav bar
+      appBar: AppBar( // Nav bar
         title: const Text('Learn Flutter!'), // Title
         automaticallyImplyLeading:
             false, // Gets ride of the default back button
@@ -48,6 +48,9 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
             ),
           ),
           ElevatedButton( // Creates a elevated button
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isSwitch ? Colors.green : Colors.blue,
+            ),
             onPressed: (){ // When pressed...
             debugPrint('Elevated Button'); // do this!
             }, 
@@ -86,6 +89,14 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
                 ),
               ],
             ),
+          ),
+          Switch(
+            value: isSwitch,
+            onChanged: (bool newBool){
+              setState(() {
+                isSwitch = newBool;
+              });
+            }
           ),
         ],
       ),
