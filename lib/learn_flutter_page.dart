@@ -24,6 +24,15 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           },
           icon: const Icon(Icons.arrow_back_ios), // Button Icon
         ),
+        actions: [ // Adds action to Nav bar
+          IconButton( // Adds Icon button
+            onPressed: (){ // When pressed....
+              debugPrint("Actions"); // Do this!
+              }, 
+              icon: const Icon(Icons.info_outline, // Which Icon the action widget will use
+              ),
+            ),
+          ],
       ),
       body: SingleChildScrollView( // Allows the scroll view to work
         child: Column( // Body of the screen
