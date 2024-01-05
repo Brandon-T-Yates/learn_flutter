@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
             ),
           );
         },
-        child: Text('Learn Flutter'), // Text Widget
+        child: const Text('Learn Flutter'), // Text Widget
       ),
     );
   }
